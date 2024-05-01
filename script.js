@@ -1,12 +1,13 @@
 const myLibrary = []; // Array to store the books
 
 // Book constructor
-function Book(title, author, genre, pages, read) {
+function Book(title, author, genre, pages, read, url) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = pages;
   this.read = read;
+  this.url = url;
 }
 
 // Book prototype to toggle the read status
@@ -60,7 +61,17 @@ function displayBooks() {
         read.classList.add('book-read'); 
         read.textContent = `Read: ${book.read}`;
 
-        bookDiv.append(title, author, genre, pages); //does not include read to display as text
+        var url = document.createElement('a'); 
+        url.classList.add('book-url');
+        if (book.url) {
+            url.textContent = book.url;
+            url.href = book.url; // Set the href attribute to the book's URL
+            url.target = "_blank"; // Optional: Open the link in a new tab
+        } else {
+            url.style.height = '1.2em'; // Set the height to the height of a line of text
+        }
+        
+        bookDiv.append(title, author, genre, pages, url); //does not include read to display as text
 
         var userActions = document.createElement('div');
         userActions.classList.add('user-actions');
@@ -113,10 +124,11 @@ document.querySelector('form').addEventListener('submit', function(event) {
     var genre = document.getElementById('genre').value;
     var pages = document.getElementById('pages').value;
     var read = document.getElementById('read').checked;
+    var url = document.getElementById('url').value;
 
 
     // Create a new book object
-    var newBook = new Book(title, author, genre, pages, read);
+    var newBook = new Book(title, author, genre, pages, read, url);
 
     // Add the book to the library
     addBookToLibrary(newBook);

@@ -36,7 +36,13 @@ function displayBooks() {
         var deleteButton = document.createElement('button');
         deleteButton.classList.add('delete');
         deleteButton.innerHTML = 'Delete';
-        
+        deleteButton.addEventListener('click', function() {
+            // Remove the book from the library
+            myLibrary.splice(index, 1);
+
+            // Display the books again
+            displayBooks();
+        });
         bookDiv.appendChild(deleteButton);
 
         // Add a read button to the book

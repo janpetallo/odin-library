@@ -10,11 +10,6 @@ body {
     text-align: center;
 }
 
-svg{
-    fill: white;
-
-}
-
 .container {
     height: 100vh;
     width: 100vw;
@@ -182,11 +177,16 @@ svg{
     cursor: pointer;
 }
 
+.add-book button svg {
+    fill: white;
+}
+
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     align-content: start;
+    justify-content: center;
 }
 
 .book-list .book {
@@ -203,6 +203,7 @@ svg{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-wrap: nowrap;
 }
 
 
@@ -238,6 +239,7 @@ svg{
     color: white;
     border-radius: 30px;
     border: none;
+    width: fit-content;
 
     display: flex;
     justify-content: space-between;
@@ -247,6 +249,25 @@ svg{
 .book button:hover {
     background-color: var(--tertiary-color);
     cursor: pointer;
+}
+
+.book-list .no-books {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 5rem;
+    gap: 0.5rem;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-list .no-books svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--primary-color);
 }
 
 

@@ -41,7 +41,7 @@ function displayBooks() {
         author.textContent = `By: ${book.author}`;
 
         var genre = document.createElement('div');
-        genre.classList.add('book-genre'); e
+        genre.classList.add('book-genre'); 
         genre.textContent = `Genre: ${book.genre}`;
 
         var pages = document.createElement('div');

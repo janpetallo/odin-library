@@ -189,11 +189,23 @@ body {
     background-color: var(--card-clr);
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 
+    font-size: 0.8rem;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
+
+
+.book-list .book .book-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+
 
 .book .user-actions {
     display: flex;
@@ -203,8 +215,8 @@ body {
 }
 
 .book .user-actions svg {
-    width: 1rem;
-    height: 1rem;
+    width: 0.7rem;
+    height: 0.7rem;
     margin-right: 0.5rem;
     fill: white;
 

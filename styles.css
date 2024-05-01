@@ -195,16 +195,33 @@ body {
     align-items: center;
 }
 
+.book .user-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.book .user-actions svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    fill: white;
+
+}
+
 .book button {
     font-size: 0.7rem;
     margin: 0.5rem;
-    padding: 0.5rem;
-    width: 80px;
+    padding:  0.5rem;
     background-color: var(--primary-color);
     color: white;
-
     border-radius: 30px;
     border: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .book button:hover {

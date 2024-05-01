@@ -5,7 +5,8 @@ body {
 }
 
 .container {
-    height: 100vh;;
+    height: 100vh;
+    width: 100vw;
 
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -15,17 +16,63 @@ body {
 .header {
     background-color: aqua;
     grid-column: 1 / 3;
+
+    font-size: 2rem;
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .add-book {
     background-color:bisque;
     grid-row: 2 / 3;
 
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
 }
 
 .book-list {
     background-color: aquamarine;
     grid-row: 2 / 3;
+
+    padding: 1rem;
+}
+
+.header svg {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+}
+
+.add-book form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-book input {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: min(80%, 300px);
+}
+
+.add-book button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: min(50%, 10rem);
+
+    border-radius: 50px;
 }
 
 

@@ -1,13 +1,18 @@
 const myLibrary = []; // Array to store the books
 
 // Book constructor
-function Book(title, author, pages, read) {
+function Book(title, author, genre, pages, read) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = pages;
   this.read = read;
 }
+
+// Book prototype to toggle the read status
+Book.prototype.toggleReadStatus = function() {
+    this.read = !this.read;
+};
 
 // Function to add a book to the library
 function addBookToLibrary(book) {
@@ -24,13 +29,31 @@ function displayBooks() {
     myLibrary.forEach(function(book, index) {
         var bookDiv = document.createElement('div');
         bookDiv.classList.add('book');
+        bookDiv.classList.add('roboto-regular'); 
         bookDiv.dataset.index = index; // Store the index of the book in the dataset
 
-        bookDiv.innerHTML = `<h2>${book.title}</h2>
-                            <p>By: ${book.author}</p>
-                            <p>Genre: ${book.genre}</p>
-                            <p>Pages: ${book.pages}</p>
-                            <p>Read: ${book.read}</p>`;
+        var title = document.createElement('div');
+        title.classList.add('book-title'); 
+        title.textContent = book.title;
+
+        var author = document.createElement('div');
+        author.classList.add('book-author'); 
+        author.textContent = `By: ${book.author}`;
+
+        var genre = document.createElement('div');
+        genre.classList.add('book-genre'); e
+        genre.textContent = `Genre: ${book.genre}`;
+
+        var pages = document.createElement('div');
+        pages.classList.add('book-pages'); 
+        pages.textContent = `Pages: ${book.pages}`;
+
+        var read = document.createElement('div');
+        read.classList.add('book-read'); 
+        read.textContent = `Read: ${book.read}`;
+
+        bookDiv.append(title, author, genre, pages, read);
+
 
         // Add a delete button to the book
         var deleteButton = document.createElement('button');
@@ -49,6 +72,13 @@ function displayBooks() {
         var readButton = document.createElement('button');
         readButton.classList.add('read');
         readButton.innerHTML = book.read ? 'Read' : 'Not Read';
+        readButton.addEventListener('click', function() {
+            // Toggle the read status of the book
+            book.toggleReadStatus();
+
+            // Update the button text
+            readButton.innerHTML = book.read ? 'Read' : 'Not Read';
+        });
         bookDiv.appendChild(readButton);
 
 

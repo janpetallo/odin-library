@@ -22,10 +22,22 @@
             <div> Add a Book</div>
 
             <form> 
-                <input type="text" placeholder="Book Title" required>
-                <input type="text" placeholder="Author" required>
-                <input type="text" placeholder="Genre" required>
-                <input type="text" placeholder="Number of Pages" required>
+                <div class="input-field">
+                    <input type="text" id="bookTitle" placeholder=" " required>
+                    <label for="bookTitle">Book Title</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="authot" placeholder=" " required>
+                    <label for="authot">Author</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="genre" placeholder=" " required>
+                    <label for="genre">Genre</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="pages" placeholder=" " pattern="[0-9]+" required>
+                    <label for="pages">Number of Pages</label>
+                </div>
                 <button type="submit">Add Book</button>
             </form>
         </div>
